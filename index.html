@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Šviesos jutiklis | 5 klasė</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f7fb;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #1769aa;
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    header p {
+      font-size: 18px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 25px;
+    }
+
+    section {
+      background: white;
+      margin-bottom: 20px;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      color: #1769aa;
+    }
+
+    .important {
+      background: #fff5cc;
+      border-left: 6px solid #f2b705;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    .light {
+      background: #fff8d9;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 10px 0;
+      font-size: 19px;
+    }
+
+    .dark {
+      background: #e5e9f2;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 10px 0;
+      font-size: 19px;
+    }
+
+    .flow {
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      background: #e8f3ff;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+
+    th {
+      background: #e8f3ff;
+    }
+
+    .code {
+      background: #202124;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 18px;
+      margin: 15px 0;
+    }
+
+    .question {
+      background: #eef8ee;
+      border-left: 6px solid #3c9b46;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      color: #666;
+      padding: 25px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>💡 Šviesos jutiklis</h1>
+  <p>5 klasė • Informatika • ESP32 ir ACECode</p>
+</header>
+
+<main>
+
+<section>
+  <h2>🎯 Ką šiandien išmoksi?</h2>
+
+  <p>Šios pamokos metu išbandysi ESP32 rinkinio šviesos jutiklį.</p>
+
+  <p>Išmoksi:</p>
+
+  <ul>
+    <li>paaiškinti, kam naudojamas šviesos jutiklis;</li>
+    <li>nuskaityti jutiklio reikšmę su ACECode;</li>
+    <li>stebėti jutiklio duomenis;</li>
+    <li>nustatyti, kaip rodmenys keičiasi šviesoje ir tamsoje.</li>
+  </ul>
+</section>
+
+
+<section>
+  <h2>🌞 Kas yra šviesos jutiklis?</h2>
+
+  <p>
+    Šviesos jutiklis yra elektroninis įrenginys, kuris reaguoja
+    į aplinkos apšvietimą.
+  </p>
+
+  <p>
+    Pavyzdžiui, šviesos jutikliai gali būti naudojami telefonuose,
+    gatvių žibintuose arba automatinėse lempose.
+  </p>
+
+  <div class="flow">
+    Šviesa → Jutiklis → ESP32 → ACECode → Duomenys
+  </div>
+
+  <p>
+    Jutiklis padeda ESP32 „sužinoti“, ar aplinkoje yra šviesu,
+    ar tamsu.
+  </p>
+</section>
+
+
+<section>
+  <h2>🔍 Kaip veikia jutiklis?</h2>
+
+  <p>
+    Šviesos jutiklyje yra detalė, vadinama
+    <strong>fotorezistoriumi</strong>.
+  </p>
+
+  <p>
+    Fotorezistorius reaguoja į šviesą. Kai apšvietimas pasikeičia,
+    pasikeičia ir jutiklio siunčiamas signalas.
+  </p>
+
+  <div class="important">
+    <strong>Svarbiausia:</strong><br>
+    ESP32 šį signalą paverčia skaičiumi, kurį galime naudoti programoje.
+  </div>
+</section>
+
+
+<section>
+  <h2>🔢 Kokią reikšmę gauname?</h2>
+
+  <p>
+    ACECode programoje galime matyti jutiklio reikšmę nuo:
+  </p>
+
+  <h1 style="text-align:center;">0 – 4095</h1>
+
+  <div class="light">
+    ☀️ <strong>Daugiau šviesos → mažesnė reikšmė</strong>
+  </div>
+
+  <div class="dark">
+    🌑 <strong>Mažiau šviesos → didesnė reikšmė</strong>
+  </div>
+
+  <div class="important">
+    Tikslūs skaičiai gali skirtis. Svarbiausia stebėti,
+    ar reikšmė <strong>didėja</strong>, ar <strong>mažėja</strong>.
+  </div>
+</section>
+
+
+<section>
+  <h2>🔌 Jutiklio kontaktai</h2>
+
+  <p>Šviesos jutiklis turi tris kontaktus:</p>
+
+  <table>
+    <tr>
+      <th>Kontaktas</th>
+      <th>Ką jis daro?</th>
+    </tr>
+
+    <tr>
+      <td><strong>S</strong></td>
+      <td>Siunčia jutiklio signalą į ESP32.</td>
+    </tr>
+
+    <tr>
+      <td><strong>V</strong></td>
+      <td>Suteikia jutikliui maitinimą.</td>
+    </tr>
+
+    <tr>
+      <td><strong>G</strong></td>
+      <td>GND – elektros grandinės jungtis.</td>
+    </tr>
+  </table>
+
+  <div class="important">
+    ⚠️ Jutiklį junk tik pagal mokytojo pateiktą jungimo schemą.
+  </div>
+</section>
+
+
+<section>
+  <h2>💻 Kaip ACECode nuskaito jutiklį?</h2>
+
+  <p>Naudosime bloką:</p>
+
+  <div class="code">
+    read analog pin 36
+  </div>
+
+  <p>
+    Šis blokas liepia ESP32 nuskaityti reikšmę iš šviesos jutiklio.
+  </p>
+
+  <p>
+    Gautą reikšmę išsaugosime kintamajame:
+  </p>
+
+  <div class="code">
+    sensorValue
+  </div>
+
+  <p>
+    <strong>Kintamasis</strong> – vieta programoje,
+    kurioje galime išsaugoti informaciją.
+  </p>
+</section>
+
+
+<section>
+  <h2>🔄 Kaip veiks mūsų programa?</h2>
+
+  <div class="flow">
+    Nuskaityti jutiklį
+    <br>↓<br>
+    Išsaugoti reikšmę
+    <br>↓<br>
+    Parodyti ją Serial Monitor lange
+    <br>↓<br>
+    Palaukti 200 ms
+    <br>↓<br>
+    Kartoti iš naujo
+  </div>
+
+  <p>
+    Kadangi programa kartojasi labai greitai, galėsime stebėti,
+    kaip jutiklio reikšmė keičiasi realiu laiku.
+  </p>
+</section>
+
+
+<section>
+  <h2>🧪 Pasiruošk eksperimentui</h2>
+
+  <div class="question">
+    <strong>1 klausimas</strong><br><br>
+    Kas atsitiks jutiklio reikšmei, jeigu jutiklį
+    <strong>uždengsi ranka</strong>?
+    <br><br>
+    ☐ Didės<br>
+    ☐ Mažės
+  </div>
+
+  <div class="question">
+    <strong>2 klausimas</strong><br><br>
+    Kas atsitiks jutiklio reikšmei, jeigu į jį
+    <strong>pašviesi žibintuvėliu</strong>?
+    <br><br>
+    ☐ Didės<br>
+    ☐ Mažės
+  </div>
+
+  <p>
+    Atlikęs bandymą patikrink, ar tavo spėjimas buvo teisingas.
+  </p>
+</section>
+
+
+<section>
+  <h2>🧠 Svarbiausia prisiminti</h2>
+
+  <div class="flow">
+    JUTIKLIS → DUOMENYS → PROGRAMA → REZULTATAS
+  </div>
+
+  <p>
+    Šviesos jutiklis yra <strong>įvesties įrenginys</strong>,
+    nes jis perduoda informaciją programai.
+  </p>
+
+  <p>
+    Programa gauna jutiklio duomenis ir gali juos panaudoti
+    sprendimams priimti.
+  </p>
+
+  <div class="light">
+    ☀️ Šviesiau → mažesnis skaičius
+  </div>
+
+  <div class="dark">
+    🌑 Tamsiau → didesnis skaičius
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Informatika • 5 klasė • ESP32 • ACECode
+</footer>
+
+</body>
+</html>
